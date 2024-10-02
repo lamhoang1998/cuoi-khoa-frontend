@@ -1,30 +1,22 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import TaskList from "./components/task/TaskList";
-import BugList from "./components/bug/BugList";
-import TaskForm from "./components/task/TaskForm";
-import BugForm from "./components/bug/BugForm";
+import React from 'react';
+import { BrowserRouter as Router, Routes as Switch, Route } from 'react-router-dom';
+import Register from './pages/Register';
+import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
 
-function App() {
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <TaskList />,
-    },
-    {
-      path: "/bugs",
-      element: <BugList />,
-    },
-    {
-      path: "/create-task",
-      element: <TaskForm />,
-    },
-    {
-      path: "/report-bug",
-      element: <BugForm />,
-    },
-  ]);
 
-  return <RouterProvider router={router} />;
-}
+const App: React.FC = () => {
+    return (
+        <Router>
+            <Switch>
+                <Route path="/" element={<Login />} />
+                <Route path="/register" element={<Register />} />
+                <Route path="/login" element={<Login />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+                
+            </Switch>
+        </Router>
+    );
+};
 
 export default App;
