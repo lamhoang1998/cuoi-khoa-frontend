@@ -186,7 +186,7 @@ const Register: React.FC = () => {
             <div className="mb-4 md:mb-0">
                 <div className="flex items-center justify-center flex-col lg:flex-row md:space-x-2">
                     <img src={logoLogin} alt="Logo" className="w-1/3 md:w-1/2 h-auto object-cover mb-4 md:mb-0" />
-                    <h2 className="hidden md:block md:text-5xl lg:text-5xl text-center font-semibold mb-5">Software</h2>
+                    <h2 className="hidden md:block text-4xl md:text-5xl lg:text-6xl text-center font-semibold">Software</h2>
                 </div>   
             </div>
             </Reveal>

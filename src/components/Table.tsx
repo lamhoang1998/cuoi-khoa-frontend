@@ -13,43 +13,45 @@ const projects = [
 const ProjectTable: React.FC = () => {
     return (
         <div className="w-full p-4">
-            <h2 className="text-xl font-semibold mb-4">Project Management</h2>
-            <table className="min-w-full bg-white rounded-lg shadow">
-                <thead>
-                    <tr className="bg-gray-200">
-                        <th className="p-2 text-left">Project ID</th>
-                        <th className="p-2 text-left">Project name</th>
-                        <th className="p-2 text-left">Category</th>
-                        <th className="p-2 text-left">Creator</th>
-                        <th className="p-2 text-left">Members</th>
-                        <th className="p-2 text-left">Action</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {projects.map((project) => (
-                        <tr key={project.id} className="border-t">
-                            <td className="p-2">{project.id}</td>
-                            <td className="p-2">{project.name}</td>
-                            <td className="p-2">{project.category}</td>
-                            <td className="p-2">{project.creator}</td>
-                            <td className="p-2">
-                                <div className="flex items-center">
-                                    {project.members.map((member, index) => (
-                                        <span key={index} className="bg-gray-300 text-sm rounded-full px-2 py-1 mr-2">
-                                            {member}
-                                        </span>
-                                    ))}
-                                    <button className="text-gray-600">+</button>
-                                </div>
-                            </td>
-                            <td className="p-2">
-                                <button className="text-blue-500 mr-2"><FaPencilAlt /></button>
-                                <button className="text-red-500"><FaTrash /></button>
-                            </td>
+            <h2 className="text-xl text-gray-600 font-semibold mb-4">Project Management</h2>
+            <div className="overflow-x-auto">
+                <table className="min-w-full bg-white rounded-lg shadow-lg">
+                    <thead>
+                        <tr className="bg-gray-200">
+                            <th className="p-2 text-left text-sm">Project ID</th>
+                            <th className="p-2 text-left text-sm">Project name</th>
+                            <th className="p-2 text-left text-sm">Category</th>
+                            <th className="p-2 text-left text-sm">Creator</th>
+                            <th className="p-2 text-left text-sm">Members</th>
+                            <th className="p-2 text-left text-sm">Action</th>
                         </tr>
-                    ))}
-                </tbody>
-            </table>
+                    </thead>
+                    <tbody>
+                        {projects.map((project) => (
+                            <tr key={project.id} className="border-t text-sm">
+                                <td className="p-2">{project.id}</td>
+                                <td className="p-2">{project.name}</td>
+                                <td className="p-2">{project.category}</td>
+                                <td className="p-2">{project.creator}</td>
+                                <td className="p-2">
+                                    <div className="flex items-center">
+                                        {project.members.map((member, index) => (
+                                            <span key={index} className="bg-gray-300 text-xs rounded-full px-2 py-1 mr-2">
+                                                {member}
+                                            </span>
+                                        ))}
+                                        <button className="text-gray-600">+</button>
+                                    </div>
+                                </td>
+                                <td className="p-2 flex space-x-2">
+                                    <button className="text-blue-500"><FaPencilAlt /></button>
+                                    <button className="text-red-500"><FaTrash /></button>
+                                </td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+            </div>
         </div>
     );
 };
